@@ -1,4 +1,5 @@
 import * as React from "react";
+import { Component } from "react";
 import {
   StyleSheet,
   Image,
@@ -7,6 +8,8 @@ import {
   View,
   ScrollView,
   TouchableOpacity,
+  SafeAreaView,
+  FlatList,
 } from "react-native";
 
 import lavanda from "../../../assets/lavanda.jpg";
@@ -14,6 +17,39 @@ import logo2 from "../../../assets/logo2.jpg";
 import italy from "../../../assets/italy.png";
 
 const width = Dimensions.get("screen").width;
+
+const DATA = [
+  {
+    id: "1",
+    title: "Chance - Chanel",
+    imagem: "../../../assets/chance.png",
+  },
+  {
+    id: "2",
+    title: "Eau Fraíche - Chanel",
+    imagem: "../../../assets/fraiche.png",
+  },
+  {
+    id: "3",
+    title: "Eau Tendre - Chanel",
+    imagem: "../../../assets/tendre.png",
+  },
+
+  {
+    id: "4",
+    title: "Eau Vive - Chanel",
+    imagem: "../../../assets/vive.png",
+  },
+];
+
+type ItemProps = { title: string };
+
+const Item = ({title}: ItemProps) => (
+  <View style={Styles.item}>
+    <Text style={Styles.title}>{title}</Text>
+  </View>
+);
+
 
 export default function Home() {
   return (
@@ -40,7 +76,14 @@ export default function Home() {
           </Text>
         </View>
 
-        <View style={Styles.list}>
+        <View>
+          <SafeAreaView>
+            <FlatList
+              data={DATA}
+              renderItem={({ item }) => <Item title={item.title}/>}
+              keyExtractor={(item) => item.id}
+            />
+          </SafeAreaView>
         </View>
       </ScrollView>
     </View>
@@ -99,5 +142,15 @@ const Styles = StyleSheet.create({
     flexDirection: "row",
   },
 
-  list: {},
+  item: {
+    backgroundColor: '#f0ddee',
+    padding: 20,
+    marginVertical: 8,
+    marginHorizontal: 16,
+  },
+
+  title: {
+    fontSize: 20,
+  },
+
 });
