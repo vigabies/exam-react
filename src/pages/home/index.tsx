@@ -50,7 +50,6 @@ const Item = ({title}: ItemProps) => (
   </View>
 );
 
-
 export default function Home() {
   return (
     <View>
@@ -110,7 +109,7 @@ const Styles = StyleSheet.create({
   },
 
   nome: {
-    fontSize: 16,
+    fontSize: 18,
     lineHeight: 26,
     marginLeft: 12,
     fontWeight: "bold",
@@ -150,7 +149,7 @@ const Styles = StyleSheet.create({
   },
 
   title: {
-    fontSize: 20,
+    fontSize: 16,
   },
 
 });
