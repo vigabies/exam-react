@@ -1,5 +1,4 @@
 import * as React from "react";
-import { Component } from "react";
 import {
   StyleSheet,
   Image,
@@ -7,82 +6,47 @@ import {
   Text,
   View,
   ScrollView,
-  TouchableOpacity,
-  SafeAreaView,
-  FlatList,
 } from "react-native";
 
-import lavanda from "../../../assets/lavanda.jpg";
+import avião from "../../../assets/avião.png";
+import cristo from "../../../assets/cristo.jpg"
 import logo2 from "../../../assets/logo2.jpg";
-import italy from "../../../assets/italy.png";
+import pichu from "../../../assets/pichu.jpg";
+
 
 const width = Dimensions.get("screen").width;
-
-const DATA = [
-  {
-    id: "1",
-    title: "Chance - Chanel",
-    imagem: "../../../assets/chance.png",
-  },
-  {
-    id: "2",
-    title: "Eau Fraíche - Chanel",
-    imagem: "../../../assets/fraiche.png",
-  },
-  {
-    id: "3",
-    title: "Eau Tendre - Chanel",
-    imagem: "../../../assets/tendre.png",
-  },
-
-  {
-    id: "4",
-    title: "Eau Vive - Chanel",
-    imagem: "../../../assets/vive.png",
-  },
-];
-
-type ItemProps = { title: string };
-
-const Item = ({title}: ItemProps) => (
-  <View style={Styles.item}>
-    <Text style={Styles.title}>{title}</Text>
-  </View>
-);
 
 export default function Home() {
   return (
     <View>
       <ScrollView>
         <View>
-          <Image source={lavanda} style={Styles.top} />
+          <Image source={avião} style={Styles.top} />
         </View>
 
         <View style={Styles.carrinho}>
           <View style={Styles.line}>
-            <Text style={Styles.titulocarrinho}>Carrello della spesa</Text>
-            {/* <Image style={Styles.italy} source={italy} /> */}
+            <Text style={Styles.titulocarrinho}>7 Meraviglie del Mondo</Text>
           </View>
 
           <View style={Styles.perfumaria}>
             <Image style={Styles.logo} source={logo2} />
-            <Text style={Styles.nome}>Le fragranze di Gabi</Text>
+            <Text style={Styles.nome}>Biglietti Aerei</Text>
           </View>
 
           <Text style={Styles.descricao}>
-            I migliori profumi importati da tutta Europa, scegli la fragranza
-            che fa per te!
+          Vieni a scoprire le sette meraviglie del mondo con la migliore compagnia aerea!
           </Text>
         </View>
 
-        <View>
-          <SafeAreaView>
-            <FlatList
-              data={DATA}
-              renderItem={({ item }) => <Item title={item.title}/>}
-              keyExtractor={(item) => item.id}
-            />
-          </SafeAreaView>
+        <View style={Styles.row}>
+          <View style={Styles.card}>
+            <Image style={Styles.img} source={cristo} />
+          </View>
+
+          <View style={Styles.card}>
+            <Image style={Styles.img} source={pichu} />
+          </View>
         </View>
       </ScrollView>
     </View>
@@ -131,18 +95,12 @@ const Styles = StyleSheet.create({
     fontStyle: "italic",
   },
 
-  italy: {
-    width: 45,
-    height: 29,
-    borderRadius: 2,
-  },
-
   line: {
     flexDirection: "row",
   },
 
   item: {
-    backgroundColor: '#f0ddee',
+    backgroundColor: "#f0ddee",
     padding: 20,
     marginVertical: 8,
     marginHorizontal: 16,
@@ -152,4 +110,27 @@ const Styles = StyleSheet.create({
     fontSize: 16,
   },
 
+  card: {
+    height: 155,
+    width: "46%",
+    backgroundColor: "#D8BFD8",
+    marginLeft: "5%",
+    marginRight: "5%",
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 5,
+  },
+
+  img: {
+    height: 120,
+    width: 110,
+    borderRadius: 5,
+  },
+
+  row: {
+    flexDirection: "row",
+    justifyContent: "center",
+    marginLeft: "5%",
+    marginRight: "5%",
+  },
 });
