@@ -83,7 +83,7 @@ const Styles = StyleSheet.create({
     
       text: {
         marginTop: "5%",
-        color: "white",
+        color: "black",
       },
 
       botao: {
