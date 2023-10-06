@@ -14,10 +14,5 @@ export const cidades = [
         name: 'Peru',
         path: '/'
     },
-    {
-        id: 3,
-        image: 'url',
-        name: 'Cidade',
-        path: '/'
-    }
+   
 ]

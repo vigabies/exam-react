@@ -74,7 +74,6 @@ const Styles = StyleSheet.create({
 
   row: {
     flexDirection: "row",
-    flexWrap: 'wrap',
     justifyContent: "center",
     marginLeft: "5%",
     marginRight: "5%",
