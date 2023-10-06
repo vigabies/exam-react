@@ -4,10 +4,9 @@ import Styles from "./styles";
 import Topo from "./components/topo";
 import Detalhes from "./components/detalhes";
 
-
 export default function Home() {
   return (
-    <View>
+    <View style={Styles.body}>
       <ScrollView>
         <View style={Styles.alinhamento}>
           <Topo />

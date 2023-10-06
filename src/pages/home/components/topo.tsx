@@ -1,26 +1,26 @@
 import * as React from "react";
 import { Image, Text, View } from "react-native";
 import Styles from "./../styles";
-import avião from "../../../../assets/avião.png";
+import Aviao from "./../../../../assets/aviao.jpg";
+import Logo from "./../../../../assets/logo.png";
 
 export default function Topo() {
   return (
     <>
-      <View>
-        <Image source={avião} style={Styles.top} />
+      <View style={Styles.header}>
+        <Image source={Logo} style={Styles.logo}/>
+      </View>
+
+      <View style={Styles.aviao}>
+        <Image source={Aviao} style={Styles.topo} />
       </View>
 
       <View>
-        <Text style={Styles.titulo}>7 Meraviglie del Mondo</Text>
-      </View>
-
-      <View style={Styles.perfumaria}>
-        <Text style={Styles.nome}>Biglietti Aerei Bibs</Text>
+        <Text style={Styles.titulo}>The best trips...</Text>
       </View>
 
       <Text style={Styles.descricao}>
-        Vieni a scoprire le sette meraviglie del mondo con la migliore compagnia
-        aerea!
+        Traveling is experiencing new cultures with an open mind!
       </Text>
     </>
   );
