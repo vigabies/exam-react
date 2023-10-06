@@ -6,7 +6,7 @@ import Detalhes from "./components/detalhes";
 
 export default function Home() {
   return (
-    <View style={Styles.body}>
+    <View>
       <ScrollView>
         <View style={Styles.alinhamento}>
           <Topo />
